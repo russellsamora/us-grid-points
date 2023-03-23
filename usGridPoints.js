@@ -5,7 +5,11 @@ import * as topojson from "topojson-client";
 const MILES_IN_LAT = 69.172;
 const MILES_IN_LON = 54.6;
 
-export default async function usGridPoints(miles = 100, contiguous = false) {
+export default async function usGridPoints(
+  miles = 100,
+  contiguous = false,
+  decimals = 4
+) {
   const stepLat = miles / MILES_IN_LAT;
   const stepLon = miles / MILES_IN_LON;
 
@@ -32,5 +36,10 @@ export default async function usGridPoints(miles = 100, contiguous = false) {
     d3.geoContains(statesGeo, [d.longitude, d.latitude])
   );
 
-  return inBounds;
+  const clean = inBounds.map((d) => ({
+    latitude: d.latitude.toFixed(decimals),
+    longitude: d.longitude.toFixed(decimals),
+  }));
+
+  return clean;
 }
