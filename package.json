@@ -1,0 +1,31 @@
+{
+	"name": "us-grid-points",
+	"version": "0.1.0",
+	"description": "Equidistant grid of latitude and longitude coordinates for the United States",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/russellsamora/us-grid-points.git"
+	},
+	"keywords": [
+		"us",
+		"grid",
+		"points",
+		"coordinates",
+		"latitude",
+		"longitude"
+	],
+	"author": "Russell Samora",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/russellsamora/us-grid-points/issues"
+	},
+	"homepage": "https://github.com/russellsamora/us-grid-points#readme",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"devDependencies": {
+		"d3": "^7.8.2",
+		"topojson-client": "^3.1.0"
+	},
+	"type": "module"
+}
